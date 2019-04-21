@@ -10,7 +10,7 @@ import java.util.List;
 
 public class Program {
 
-    public static void main (String[]args){
+    public static void main(String[] args) {
 
         SellerDao sellerDao = DaoFactory.createSellerDao();
 
@@ -21,9 +21,15 @@ public class Program {
         System.out.println("\n===TEST2: Seller findByDepartamentId ===");
         Department department = new Department(1, null);
         List<Seller> list = sellerDao.findByDepartment(department);
-        for (Seller obj: list) {
+        for (Seller obj : list) {
             System.out.println(obj);
         }
-    }
 
+        System.out.println("\n===TEST3: Seller findByDepartamentId ===");
+        list = sellerDao.findAll();
+        for (Seller obj : list) {
+            System.out.println(obj);
+        }
+
+    }
 }
